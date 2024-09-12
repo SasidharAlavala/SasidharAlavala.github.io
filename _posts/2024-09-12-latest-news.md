@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "🚀 🏆 Latest News and Achievements"
 order: 1
 ---
-Latest news
+latest news and achievements.
