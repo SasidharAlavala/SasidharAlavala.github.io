@@ -3,13 +3,13 @@
 
   <div class="wrapper">
 
-    <div class="footer-col-wrapper" style="display: flex; justify-content: space-between;">
+    <div class="footer-col-wrapper" style="display: flex; justify-content: space-between; align-items: flex-start;">
 
       <!-- Left Column: Social Links and Follow/Stalk Request -->
-      <div class="footer-col" style="flex: 1;">
+      <div class="footer-col" style="flex: 1; text-align: left;">
         <p>Please stalk me through X (or Twitter), YouTube, Instagram, LinkedIn, and Facebook! You can also email me at <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.</p>
 
-        <div class="social-links">
+        <div class="social-links" style="text-align: left;">
           {%- include social.html -%}
         </div>
       </div>
@@ -18,7 +18,7 @@
       <div class="footer-col" style="flex: 1; text-align: right;">
         <p>{{ site.description | escape }}</p>
       </div>
-      
+
     </div>
 
   </div>
