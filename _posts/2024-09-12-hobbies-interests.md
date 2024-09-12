@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🎮 🌍 Hobbies and Interests"
+title: "🎮Hobbies and Interests🌍"
 categories: main
 meta: "Sasidhar Alavala"
 order: 4
