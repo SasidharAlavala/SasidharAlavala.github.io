@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "💻 💡 Projects and Research"
+title: "💻Projects and Research💡"
 categories: main
 meta: "Sasidhar Alavala"
 order: 3
