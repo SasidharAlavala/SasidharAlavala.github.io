@@ -7,4 +7,4 @@
 #
 layout: home
 ---
-Hi
+Latest news:
