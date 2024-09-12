@@ -1,11 +1,8 @@
 ---
 layout: post
-title: "Projects and Research"
-categories: junk
-author:
-- Bart Simpson
-- Nelson Mandela Muntz
-meta: "Springfield"
+title: "🔬 📚 Projects and Research"
+categories: main
+meta: "Sasidhar Alavala"
 order: 3
 ---
 
