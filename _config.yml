@@ -6,7 +6,7 @@ author:
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
-  Feel free to browse, but remember—I reserve all rights to the content here. If you want to copy or use anything, just drop me an email first, or I might send a big curse your way, and trust me, bad things could happen! 😉 As for the content I’ve borrowed from others, I’ve tried to cite them properly, and I really hope no one throws a curse my way either!
+  Feel free to browse, but remember, I reserve all rights to the content here. If you want to copy or use anything, just drop me an email first, or I might send a big curse your way, and trust me, bad things could happen! 😉 As for the content I’ve borrowed from others, I’ve tried to cite them properly, and I really hope no one throws a curse my way either!
 # Build settings
 
 # If you clone the Minima repo and build locally, use this setting.
@@ -33,11 +33,11 @@ header_pages:
 
 # Minima specific settings, which are only available from Minima 3.0 onward.
 minima:
-  # Minima skin selection.
-  # Available skins are:
-  # classic	           Default, light color scheme.
-  # dark	             Dark variant of the classic skin.
-  # auto	             Adaptive skin based on the default classic and dark skins.
+   Minima skin selection.
+   Available skins are:
+   classic	           Default, light color scheme.
+   dark	             Dark variant of the classic skin.
+   auto	             Adaptive skin based on the default classic and dark skins.
   # solarized-light	   Light variant of solarized color scheme.
   # solarized-dark	   Dark variant of solarized color scheme.
   # solarized	         Adaptive skin for solarized color scheme skins.
