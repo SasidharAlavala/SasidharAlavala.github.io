@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Research/Projects"
+title: "Work, Projects and Research"
 categories: junk
 author:
 - Bart Simpson
