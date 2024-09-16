@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-skin="{{ site.minima.skin }}">
 
   {%- include head.html -%}
 
   <body>
 
     {%- include header.html -%}
+
+    <!-- Theme Switcher Section -->
+    <div class="theme-switcher">
+      <label for="theme-switcher">Select Theme:</label>
+      <select id="theme-switcher" onchange="switchSkin()">
+        <option value="dark">Dark (default)</option>
+        <option value="classic">Light</option>
+      </select>
+    </div>
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -15,6 +24,27 @@
 
     {%- include footer.html -%}
 
-  </body>
+    <!-- JavaScript to Handle Theme Switching -->
+    <script>
+      // Function to apply the skin
+      function applySkin(skin) {
+        document.documentElement.setAttribute('data-skin', skin);
+        localStorage.setItem('skin', skin);  // Save the selected skin in localStorage
+      }
 
+      // Function to switch the skin based on user selection
+      function switchSkin() {
+        const selectedSkin = document.getElementById('theme-switcher').value;
+        applySkin(selectedSkin);
+      }
+
+      // On page load, check if a skin is stored in localStorage
+      window.onload = function() {
+        const savedSkin = localStorage.getItem('skin') || 'dark';  // Default to dark
+        applySkin(savedSkin);
+        document.getElementById('theme-switcher').value = savedSkin;  // Set dropdown to saved skin
+      }
+    </script>
+
+  </body>
 </html>
