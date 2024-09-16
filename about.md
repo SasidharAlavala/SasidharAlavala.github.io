@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-My name is Sasidhar Alavala.
+Website under preparation.
