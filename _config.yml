@@ -1,6 +1,6 @@
 permalink: /:title/
 collections:
-  posts:
+  _posts:
     output: true
     permalink: /:title/
 title: Sasidhar Alavala
