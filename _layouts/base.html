@@ -1,36 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-skin="{{ site.minima.skin }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
   <body>
 
-    <div class="theme-switcher">
-      <label for="theme-toggle">Switch Skin:</label>
-      <select id="theme-toggle" onchange="switchSkin()">
-        <option value="classic">Classic</option>
-        <option value="dark">Dark</option>
-        <!-- Add other skins as needed -->
-      </select>
-    </div>
+    {%- include header.html -%}
 
-    <script>
-      // Function to apply the skin dynamically
-      function applySkin(skin) {
-        document.documentElement.setAttribute('data-skin', skin);
-        localStorage.setItem('skin', skin);
-      }
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
 
-      // Function to handle skin switching based on user input
-      function switchSkin() {
-        const selectedSkin = document.getElementById('theme-toggle').value;
-        applySkin(selectedSkin);
-        location.reload();  // Reload the page to apply the new skin
-      }
+    {%- include footer.html -%}
 
-      // On page load, apply the skin from localStorage or default to current setting
-      window.onload = function() {
-        const savedSkin = localStorage.getItem('skin') || '{{ site.minima.skin }}';
-        document.getElementById('theme-toggle').value = savedSkin;
-        applySkin(savedSkin);
-      }
-    </script>
   </body>
+
 </html>
