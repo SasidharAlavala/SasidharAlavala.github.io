@@ -1,79 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-skin="dark">
-
-  {%- include head.html -%}
-
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-skin="{{ site.minima.skin }}">
   <body>
 
-    {%- include header.html -%}
-
-    <!-- Theme Toggle Switch Section -->
     <div class="theme-switcher">
-      <label for="theme-toggle" id="theme-label">Dark Mode</label>
-      <input type="checkbox" id="theme-toggle" onchange="switchSkin()">
+      <label for="theme-toggle">Switch Skin:</label>
+      <select id="theme-toggle" onchange="switchSkin()">
+        <option value="classic">Classic</option>
+        <option value="dark">Dark</option>
+        <!-- Add other skins as needed -->
+      </select>
     </div>
 
-    <!-- Message Section -->
-    <div class="theme-message">
-      <p id="theme-message">Page rendered with the dark skin of Minima theme</p>
-    </div>
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
-
-    {%- include footer.html -%}
-
-    <!-- JavaScript to Handle Theme Switching -->
     <script>
-      // Function to apply the skin and display the correct message
+      // Function to apply the skin dynamically
       function applySkin(skin) {
         document.documentElement.setAttribute('data-skin', skin);
-        localStorage.setItem('skin', skin);  // Save the selected skin in localStorage
-
-        // Update label text and theme message based on the selected theme
-        const themeLabel = document.getElementById('theme-label');
-        const themeMessage = document.getElementById('theme-message');
-
-        if (skin === 'dark') {
-          themeLabel.textContent = "Dark Mode";
-          themeMessage.textContent = "Page rendered with the dark skin of Minima theme";
-          document.getElementById('theme-toggle').checked = true;  // Toggle is on for dark mode
-        } else {
-          themeLabel.textContent = "Light Mode";
-          themeMessage.textContent = "Page rendered with the classic skin of Minima theme";
-          document.getElementById('theme-toggle').checked = false;  // Toggle is off for light mode
-        }
+        localStorage.setItem('skin', skin);
       }
 
-      // Function to switch the skin based on user selection (toggle switch)
+      // Function to handle skin switching based on user input
       function switchSkin() {
-        const isDarkMode = document.getElementById('theme-toggle').checked;
-        const selectedSkin = isDarkMode ? 'dark' : 'classic';
+        const selectedSkin = document.getElementById('theme-toggle').value;
         applySkin(selectedSkin);
+        location.reload();  // Reload the page to apply the new skin
       }
 
-      // On page load, check if a skin is stored in localStorage and apply the correct message
+      // On page load, apply the skin from localStorage or default to current setting
       window.onload = function() {
-        const savedSkin = localStorage.getItem('skin') || 'dark';  // Default to dark skin
-        applySkin(savedSkin);  // Apply the saved skin on load
+        const savedSkin = localStorage.getItem('skin') || '{{ site.minima.skin }}';
+        document.getElementById('theme-toggle').value = savedSkin;
+        applySkin(savedSkin);
       }
     </script>
-
-    <!-- Optional CSS for the Toggle Switch (to make it more user-friendly) -->
-    <style>
-      .theme-switcher {
-        margin: 20px;
-        display: flex;
-        align-items: center;
-      }
-      #theme-toggle {
-        margin-left: 10px;
-      }
-    </style>
-
   </body>
-
 </html>
