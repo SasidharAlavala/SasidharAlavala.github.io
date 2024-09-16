@@ -30,7 +30,7 @@ layout: base
             {{ post.title | escape }}
           </a>
         </h3>
-        <p class="post-meta">Published on: {{ post.date | date: date_format }}</p>
+        <p class="post-meta">Updated on: {{ post.date | date: date_format }}</p>
 
         {%- if site.show_excerpts -%}
           <p>{{ post.excerpt }}</p>
