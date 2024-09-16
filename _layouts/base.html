@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-skin="{{ site.minima.skin }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-skin="dark">
 
   {%- include head.html -%}
 
@@ -28,7 +28,6 @@
     <script>
       // Function to apply the skin
       function applySkin(skin) {
-        console.log("Applying skin:", skin);  // Debugging line to ensure correct skin is being applied
         document.documentElement.setAttribute('data-skin', skin);
         localStorage.setItem('skin', skin);  // Save the selected skin in localStorage
       }
@@ -36,14 +35,12 @@
       // Function to switch the skin based on user selection
       function switchSkin() {
         const selectedSkin = document.getElementById('theme-switcher').value;
-        console.log("Selected skin:", selectedSkin);  // Debugging line to check the selected skin value
         applySkin(selectedSkin);
       }
 
       // On page load, check if a skin is stored in localStorage and apply it
       window.onload = function() {
         const savedSkin = localStorage.getItem('skin') || 'dark';  // Default to dark skin
-        console.log("Loaded skin from localStorage:", savedSkin);  // Debugging line to check the loaded skin
         applySkin(savedSkin);  // Apply the saved skin
         document.getElementById('theme-switcher').value = savedSkin;  // Set dropdown to the saved skin
       }
