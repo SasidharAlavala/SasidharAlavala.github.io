@@ -4,6 +4,7 @@ title: "✍️Blog and Vlog🎥"
 categories: main
 meta: "Sasidhar Alavala"
 order: 2
+date: 2024-09-12
 ---
 
 blog and vlog.
