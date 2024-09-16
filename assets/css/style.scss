@@ -2,6 +2,17 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import
-  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
-  "minima/initialize";
+@import "minima/initialize";
+
+/* Import both skins */
+@import "minima/skins/classic";
+@import "minima/skins/dark";
+
+/* Make dark theme inactive by default, we will enable it via JavaScript */
+[data-skin="dark"] {
+  @import "minima/skins/dark";
+}
+
+[data-skin="classic"] {
+  @import "minima/skins/classic";
+}
