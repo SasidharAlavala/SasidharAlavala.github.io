@@ -54,9 +54,9 @@ minima:
     - { platform: twitter,        user_url: "https://x.com/SasidharAlavala" }
     - { platform: youtube,        user_url: "https://www.youtube.com" }
     - { platform: instagram,      user_url: "https://www.instagram.com/sasidharalavala/" }
-    - { platform: linkedin,       user_url: "https://www.linkedin.com" }
+    - { platform: linkedin,       user_url: "https://www.linkedin.com/in/sasidharalavala/" }
     - { platform: facebook,       user_url: "https://www.facebook.com" }
-    - { platform: google_scholar, user_url: "https://scholar.google.com" }
+  #  - { platform: google_scholar, user_url: "https://scholar.google.com" }
   #  - { platform: devto,          user_url: "https://dev.to/jekyll" }
   #  - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
   #  - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
