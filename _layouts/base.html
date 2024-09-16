@@ -28,11 +28,13 @@
     <script>
       // Function to apply the skin
       function applySkin(skin) {
+        // Set the selected skin as a data-skin attribute on the html element
         document.documentElement.setAttribute('data-skin', skin);
-        localStorage.setItem('skin', skin);  // Save the selected skin in localStorage
+        // Save the skin preference to localStorage
+        localStorage.setItem('skin', skin);
       }
 
-      // Function to switch the skin based on user selection
+      // Function to handle theme switcher dropdown
       function switchSkin() {
         const selectedSkin = document.getElementById('theme-switcher').value;
         applySkin(selectedSkin);
@@ -41,10 +43,11 @@
       // On page load, check if a skin is stored in localStorage
       window.onload = function() {
         const savedSkin = localStorage.getItem('skin') || 'dark';  // Default to dark
-        applySkin(savedSkin);
-        document.getElementById('theme-switcher').value = savedSkin;  // Set dropdown to saved skin
+        applySkin(savedSkin);  // Apply the saved skin
+        document.getElementById('theme-switcher').value = savedSkin;  // Set dropdown to the saved skin
       }
     </script>
 
   </body>
+
 </html>
