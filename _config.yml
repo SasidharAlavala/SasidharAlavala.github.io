@@ -1,8 +1,4 @@
 permalink: /:title/
-collections:
-  _posts:
-    output: true
-    permalink: /:title/
 title: Sasidhar Alavala
 author:
   name: Sasidhar Alavala
