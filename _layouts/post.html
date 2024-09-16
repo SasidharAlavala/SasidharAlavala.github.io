@@ -9,7 +9,7 @@ layout: base
       <!-- Date is displayed but not in the title or filename -->
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        Published on: {{ page.date | date: date_format }}
+        Updated on: {{ page.date | date: date_format }}
       </time>
       
       <!-- Display the modified date if it exists -->
