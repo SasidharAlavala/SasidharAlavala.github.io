@@ -4,7 +4,7 @@ title: "🚀News and Achievements🏆"
 categories: main
 meta: "Sasidhar Alavala"
 order: 1
-date: 01-08-24
+date: 2024-08-01
 ---
 **[Aug 2024]** Joined Spectrum lab at IISc Bangalore.\
 **[Feb 2023]** Awarded **Navavishkar in Google Earth Engine** Research fellowship by IITTNiF in collaboration with Google India to work on addressing climate change-related issues using Google Earth Engine.\
