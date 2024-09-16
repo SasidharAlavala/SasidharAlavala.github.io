@@ -7,13 +7,15 @@
 
     {%- include header.html -%}
 
-    <!-- Theme Switcher Section -->
+    <!-- Theme Toggle Switch Section -->
     <div class="theme-switcher">
-      <label for="theme-switcher">Select Theme:</label>
-      <select id="theme-switcher" onchange="switchSkin()">
-        <option value="dark">Dark (default)</option>
-        <option value="classic">Light</option>
-      </select>
+      <label for="theme-toggle" id="theme-label">Dark Mode</label>
+      <input type="checkbox" id="theme-toggle" onchange="switchSkin()">
+    </div>
+
+    <!-- Message Section -->
+    <div class="theme-message">
+      <p id="theme-message">Page rendered with the dark skin of Minima theme</p>
     </div>
 
     <main class="page-content" aria-label="Content">
@@ -26,25 +28,51 @@
 
     <!-- JavaScript to Handle Theme Switching -->
     <script>
-      // Function to apply the skin
+      // Function to apply the skin and display the correct message
       function applySkin(skin) {
         document.documentElement.setAttribute('data-skin', skin);
         localStorage.setItem('skin', skin);  // Save the selected skin in localStorage
+
+        // Update label text and theme message based on the selected theme
+        const themeLabel = document.getElementById('theme-label');
+        const themeMessage = document.getElementById('theme-message');
+
+        if (skin === 'dark') {
+          themeLabel.textContent = "Dark Mode";
+          themeMessage.textContent = "Page rendered with the dark skin of Minima theme";
+          document.getElementById('theme-toggle').checked = true;  // Toggle is on for dark mode
+        } else {
+          themeLabel.textContent = "Light Mode";
+          themeMessage.textContent = "Page rendered with the classic skin of Minima theme";
+          document.getElementById('theme-toggle').checked = false;  // Toggle is off for light mode
+        }
       }
 
-      // Function to switch the skin based on user selection
+      // Function to switch the skin based on user selection (toggle switch)
       function switchSkin() {
-        const selectedSkin = document.getElementById('theme-switcher').value;
+        const isDarkMode = document.getElementById('theme-toggle').checked;
+        const selectedSkin = isDarkMode ? 'dark' : 'classic';
         applySkin(selectedSkin);
       }
 
-      // On page load, check if a skin is stored in localStorage and apply it
+      // On page load, check if a skin is stored in localStorage and apply the correct message
       window.onload = function() {
         const savedSkin = localStorage.getItem('skin') || 'dark';  // Default to dark skin
-        applySkin(savedSkin);  // Apply the saved skin
-        document.getElementById('theme-switcher').value = savedSkin;  // Set dropdown to the saved skin
+        applySkin(savedSkin);  // Apply the saved skin on load
       }
     </script>
+
+    <!-- Optional CSS for the Toggle Switch (to make it more user-friendly) -->
+    <style>
+      .theme-switcher {
+        margin: 20px;
+        display: flex;
+        align-items: center;
+      }
+      #theme-toggle {
+        margin-left: 10px;
+      }
+    </style>
 
   </body>
 
